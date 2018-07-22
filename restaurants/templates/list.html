@@ -3,7 +3,13 @@
 {% block title %}List{% endblock title %}
 
 {% block content %}
+
+<form action="{% url 'restaurant-list' %}" method="GET">
+    <input type="text" name='q' placeholder="Search here..." value="{{request.GET.q}}">>
+    <input type="submit" value="Search">
+</form>
 <br>
+
 <div class="row">
     {% for restaurant in restaurants %}
     <div class="col-md-4">
@@ -25,4 +31,3 @@
     {% endfor %}
 </div>
 {% endblock content %}
-
